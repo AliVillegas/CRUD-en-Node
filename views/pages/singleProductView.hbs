@@ -1,0 +1,22 @@
+<div id="productFormWrapper">
+    <h1>Editar datos del producto</h1>
+
+<form id= "productInputForm" method="POST" action="/products/{{product.id}}/edit?_method=PUT">
+    <div>
+        <label for="name">Nombre: </label>
+        <input type="text" id="name" name="name" value="{{product.name}}">
+    </div>
+    <div>
+        <label for="price">Precio: </label>
+        <input type="text" id="price" name="price" value="{{product.price}}">
+    </div>
+    <div>
+        <label for="description">Descripción: </label>
+        <input type="text" id="description" name="description" value="{{product.description}}">
+    </div>
+    <div>
+
+        <input id="submitProducts" type="submit" value="Guardar">
+    </div>
+</form>
+</div>

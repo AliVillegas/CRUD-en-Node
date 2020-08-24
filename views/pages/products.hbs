@@ -1,0 +1,59 @@
+<!-- views/pages/homepage.js -->
+
+<div id="headerHW">
+    <h1>Ali Villegas A01337596</h1>
+    <p>Tarea 1 CRUD en Node</p>
+</div>
+
+<div id="productsTableDiv">
+    
+<h2>Productos:</h2>
+    <table>
+  
+  <tr>
+    <th>Producto</th>
+    <th>Precio</th>
+    <th></th>
+  </tr>
+    {{#each products}}
+    <tr>
+        <th> {{this.name}}</th>
+        <th> {{this.price}}$</th>
+        <th class="margin0Auto"> <button id= "moreInfoButton" onclick=" window.location = '/products/{{this.id}}' ">  editar</button>
+        <form class="formDisplayBlock" method="POST" action="/products/{{id}}?_method=DELETE">
+          <input class="delButton"type="submit" value="Eliminar">
+        </form>
+        
+        </th>
+
+       <!-- <th> {{this.description}}</th> -->
+
+    </tr>
+    {{/each}}
+ 
+</table>
+    
+</div>
+
+
+<div id="productFormWrapper">
+    <h1>Añadir nuevo producto</h1>
+<form id= "productInputForm" method="POST" action="/products">
+    <div>
+        <label for="name">Nombre: </label>
+        <input type="text" id="name" name="name">
+    </div>
+    <div>
+        <label for="price">Precio: </label>
+        <input type="text" id="price" name="price">
+    </div>
+    <div>
+        <label for="description">Descripción: </label>
+        <input type="text" id="description" name="description">
+    </div>
+    
+    <div>
+        <input id="submitProducts" type="submit" value="Guardar">
+    </div>
+</form>
+</div>
