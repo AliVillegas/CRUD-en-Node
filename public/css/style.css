@@ -58,7 +58,8 @@ tr:nth-child(even) {
     font-size: 16px;
 }
 
-#productInputForm input[type="text"] {
+#productInputForm input[type="text"],
+#productInputForm input[type="number"] {
     height: 30px;
 }
 
@@ -77,6 +78,13 @@ tr:nth-child(even) {
     display: inline-block;
     font-size: 16px;
     margin: 0 auto;
+}
+
+#errorMessage {
+    color: red;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 30px;
 }
 
 #deleteItemButton,

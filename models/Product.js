@@ -40,3 +40,47 @@ exports.all = () => {
         .select('*')
         .from('products');
 }
+
+exports.productsNameAsc = () => {
+    return knex
+        .select('*')
+        .from('products')
+        .orderBy('name');
+}
+
+exports.productsPriceAsc = () => {
+    return knex
+        .select('*')
+        .from('products')
+        .orderBy('price');
+}
+
+exports.productsPriceDes = () => {
+    return knex
+        .select('*')
+        .from('products')
+        .orderBy('price', 'desc');
+}
+
+
+exports.productsNameDes = () => {
+    return knex
+        .select('*')
+        .from('products')
+        .orderBy('name', 'desc');
+}
+
+exports.productsDescripAsc = () => {
+    return knex
+        .select('*')
+        .from('products')
+        .orderBy('description', 'asc');
+}
+
+
+exports.productsDescripDes = () => {
+    return knex
+        .select('*')
+        .from('products')
+        .orderBy('description', 'desc');
+}

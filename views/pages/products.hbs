@@ -11,14 +11,39 @@
     <table>
   
   <tr>
-    <th>Producto</th>
-    <th>Precio</th>
+    <th>Producto 
+        <form class="formDisplayBlock" method="GET" action="/products=name_ASC">
+          <input class="moreInfoButton"type="submit" value="Ordenar Asc">
+        </form>
+        <form class="formDisplayBlock" method="GET" action="/products=name_DES">
+          <input class="moreInfoButton"type="submit" value="Ordenar Des">
+        </form>
+    </th>
+    <th>Precio
+        <form class="formDisplayBlock" method="GET" action="/products=price_ASC">
+          <input class="moreInfoButton"type="submit" value="Ordenar Asc">
+        </form>
+        <form class="formDisplayBlock" method="GET" action="/products=price_DES">
+          <input class="moreInfoButton"type="submit" value="Ordenar Des">
+        </form>
+    </th>
+    <th>Descripción
+        <form class="formDisplayBlock" method="GET" action="/products=descrip_ASC">
+          <input class="moreInfoButton"type="submit" value="Ordenar Asc">
+        </form>
+        <form class="formDisplayBlock" method="GET" action="/products=descrip_DES">
+          <input class="moreInfoButton"type="submit" value="Ordenar Des">
+        </form>
+    </th>
     <th></th>
+
   </tr>
     {{#each products}}
     <tr>
         <th> {{this.name}}</th>
         <th> {{this.price}}$</th>
+        <th> {{this.description}}</th>
+
         <th class="margin0Auto"> <button id= "moreInfoButton" onclick=" window.location = '/products/{{this.id}}' ">  editar</button>
         <form class="formDisplayBlock" method="POST" action="/products/{{id}}?_method=DELETE">
           <input class="delButton"type="submit" value="Eliminar">
@@ -26,7 +51,6 @@
         
         </th>
 
-       <!-- <th> {{this.description}}</th> -->
 
     </tr>
     {{/each}}
@@ -35,7 +59,7 @@
     
 </div>
 
-
+ <h2 id="errorMessage">{{error}} </h2>
 <div id="productFormWrapper">
     <h1>Añadir nuevo producto</h1>
 <form id= "productInputForm" method="POST" action="/products">
@@ -45,7 +69,7 @@
     </div>
     <div>
         <label for="price">Precio: </label>
-        <input type="text" id="price" name="price">
+        <input type="number" id="price" name="price">
     </div>
     <div>
         <label for="description">Descripción: </label>
